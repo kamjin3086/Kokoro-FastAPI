@@ -633,7 +633,6 @@ This project is licensed under the Apache License 2.0 - see below for details:
 The full Apache 2.0 license text can be found at: https://www.apache.org/licenses/LICENSE-2.0
 </details>
 
-<details>
 
 ## 中文模型使用与 Conda 环境设置 (Chinese Model Usage & Conda Setup)
 
