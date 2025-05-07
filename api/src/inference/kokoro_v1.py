@@ -48,7 +48,7 @@ class KokoroV1(BaseModelBackend):
             logger.info(f"Model path: {model_path}")
 
             # Load model and let KModel handle device mapping
-            self._model = KModel(config=config_path, model=model_path).eval()
+            self._model = KModel(config=config_path, model=model_path, repo_id=settings.repo_id).eval()
             # For MPS, manually move ISTFT layers to CPU while keeping rest on MPS
             if self._device == "mps":
                 logger.info(
@@ -80,7 +80,7 @@ class KokoroV1(BaseModelBackend):
         if lang_code not in self._pipelines:
             logger.info(f"Creating new pipeline for language code: {lang_code}")
             self._pipelines[lang_code] = KPipeline(
-                lang_code=lang_code, model=self._model, device=self._device
+                lang_code=lang_code, model=self._model, device=self._device, repo_id=settings.repo_id
             )
         return self._pipelines[lang_code]
 

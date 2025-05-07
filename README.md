@@ -618,7 +618,7 @@ Visit [NVIDIA Container Toolkit installation](https://docs.nvidia.com/datacenter
 <details open>
 <summary>Model</summary>
 
-This API uses the [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) model from HuggingFace. 
+This API is configured to use the [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) model from HuggingFace. For enhanced Chinese language support, this project defaults to using the `hexgrad/Kokoro-82M-v1.1-zh` version of the model.
 
 Visit the model page for more details about training, architecture, and capabilities. I have no affiliation with any of their work, and produced this wrapper for ease of use and personal projects.
 </details>
@@ -631,4 +631,37 @@ This project is licensed under the Apache License 2.0 - see below for details:
 - The inference code adapted from StyleTTS2 is MIT licensed
 
 The full Apache 2.0 license text can be found at: https://www.apache.org/licenses/LICENSE-2.0
+</details>
+
+<details>
+<summary>中文模型使用与 Conda 环境设置 (Chinese Model Usage & Conda Setup)</summary>
+
+本仓库已配置为优先使用 `hexgrad/Kokoro-82M-v1.1-zh` 模型，此模型对中文语音合成提供了更好的支持。相关配置参考了 [GitHub Issue #214](https://github.com/remsky/Kokoro-FastAPI/issues/214)。
+
+**通过 Conda 设置并运行环境:**
+
+1.  **创建 Conda 环境:**
+    假设您已将环境导出到 `environment.yml` 文件 (如果文件中包含 `prefix:` 行，建议手动删除或忽略它，Conda 通常能正确处理)。
+    ```bash
+    conda env create -f environment.yml
+    ```
+    如果需要指定环境名称，可以使用：
+    ```bash
+    conda env create -f environment.yml -n your_env_name
+    ```
+2.  **激活 Conda 环境:**
+    ```bash
+    conda activate <your_env_name> # 将 <your_env_name> 替换为您的环境名，如果创建时未指定，则使用 environment.yml 中定义的名称
+    ```
+3.  **安装/确认项目依赖:**
+    `environment.yml` 应包含大部分依赖。为确保所有 `pyproject.toml` 中定义的依赖均已安装，可以在激活环境后，在项目根目录下运行 (根据您的包管理工具选择)：
+    ```bash
+    # 使用 pip
+    pip install .
+    # 或者使用 uv (如果已安装)
+    # uv pip install .
+    ```
+4.  **运行服务:**
+    服务启动方式与原有说明一致 (例如 `./start-cpu.sh` 或 `./start-gpu.sh`)，服务将运行在 `http://localhost:8880`。
+
 </details>

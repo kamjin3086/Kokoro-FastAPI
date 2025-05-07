@@ -71,7 +71,7 @@ class ModelManager:
                 voice_path = await paths.get_voice_path(settings.default_voice)
 
                 # Warm up with short text
-                warmup_text = "Warmup text for initialization."
+                warmup_text = "初始化的预热文本。"
                 # Use default voice name for warmup
                 voice_name = settings.default_voice
                 logger.debug(f"Using default voice '{voice_name}' for warmup")
