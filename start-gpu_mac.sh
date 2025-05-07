@@ -8,7 +8,12 @@ export USE_GPU=true
 export USE_ONNX=false
 export PYTHONPATH=$PROJECT_ROOT:$PROJECT_ROOT/api
 export MODEL_DIR=src/models
-export VOICES_DIR=src/voices/v1_0
+
+# export VOICES_DIR=src/voices/v1_0
+export VOICES_DIR=src/voices/v1_1-zh
+export DEFAULT_VOICE=zf_094
+export REPO_ID=hexgrad/Kokoro-82M-v1.1-zh
+
 export WEB_PLAYER_PATH=$PROJECT_ROOT/web
 
 export DEVICE_TYPE=mps

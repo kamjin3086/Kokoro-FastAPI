@@ -1,4 +1,4 @@
-name: kokoro-fastapi-cpu
+name: kokoro-fastapi-chinese-cpu
 services:
   kokoro-tts:
     build:

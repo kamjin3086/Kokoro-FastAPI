@@ -32,6 +32,7 @@ Kokoro-82M/
 ui/
 tests/
 *.md
+!README.md
 *.txt
 !requirements.txt
 

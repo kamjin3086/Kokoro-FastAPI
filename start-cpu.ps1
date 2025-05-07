@@ -5,7 +5,12 @@ $Env:USE_GPU="false"
 $Env:USE_ONNX="false"
 $Env:PYTHONPATH="$Env:PROJECT_ROOT;$Env:PROJECT_ROOT/api"
 $Env:MODEL_DIR="src/models"
-$Env:VOICES_DIR="src/voices/v1_0"
+
+# export VOICES_DIR=src/voices/v1_0
+$Env:VOICES_DIR="src/voices/v1_1-zh"
+$Env:DEFAULT_VOICE="zf_094"
+$Env:REPO_ID="hexgrad/Kokoro-82M-v1.1-zh"
+
 $Env:WEB_PLAYER_PATH="$Env:PROJECT_ROOT/web"
 
 uv pip install -e ".[cpu]"
