@@ -634,7 +634,8 @@ The full Apache 2.0 license text can be found at: https://www.apache.org/license
 </details>
 
 <details>
-<summary>中文模型使用与 Conda 环境设置 (Chinese Model Usage & Conda Setup)</summary>
+
+## 中文模型使用与 Conda 环境设置 (Chinese Model Usage & Conda Setup)
 
 本仓库已配置为优先使用 `hexgrad/Kokoro-82M-v1.1-zh` 模型，此模型对中文语音合成提供了更好的支持。相关配置参考了 [GitHub Issue #214](https://github.com/remsky/Kokoro-FastAPI/issues/214)。
 
